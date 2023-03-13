@@ -16,7 +16,7 @@ public class ReservationsController : ControllerBase
         _logger = logger;
     }
 
-    [HttpPost("reserve")]
+    [HttpPost]
     public IResult SubmitReservation([FromServices] DaprClient client, [FromBody] Item item)
     {
         _logger.LogInformation("Enter Reservation");

@@ -16,7 +16,7 @@ public class OrdersController : ControllerBase
     /// <param name="order">Order info.</param>
     /// <param name="daprClient">State client to interact with Dapr runtime.</param>
     /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
-    [HttpPost("order")]
+    [HttpPost]
     public async Task<ActionResult<Guid>> SubmitOrder(Order order, [FromServices] DaprClient daprClient)
     {
         Console.WriteLine("Enter submit order");
@@ -28,8 +28,8 @@ public class OrdersController : ControllerBase
             /* a dynamic type is passed to sample.microservice.reservation and not
             the Order in scope of sample.microservice.order, you could use DTO instead */
             var data = new { sku = item.ProductCode, quantity = item.Quantity };
-            var result = await daprClient.InvokeMethodAsync<object, dynamic>(HttpMethod.Post, "reservations-api", "reservations/reserve", data);
-            Console.WriteLine($"sku: {result.GetProperty("sku")} === new quantity: {result.GetProperty("quantity")}");
+            var result = await daprClient.InvokeMethodAsync<object, dynamic>(HttpMethod.Post, "reservations-api", "reservations", data);
+            Console.WriteLine($"sku: {result.GetProperty("value").GetProperty("sku")} === new quantity: {result.GetProperty("value").GetProperty("quantity")}");
         }
 
         Console.WriteLine($"Submitted order {order.Id}");

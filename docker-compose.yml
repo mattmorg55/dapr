@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Biscotti.Online.Orders.API/Dockerfile
     ports:
-      - "4001:80"
+      - "5001:80"
     depends_on:
       - dapr-placement
     networks:
@@ -19,7 +19,6 @@ services:
     command: ["./daprd",
       "-app-id","orders-api",
       "-app-port","80",
-      #"-dapr-http-port","5001",
       "-placement-host-address","dapr-placement:50000",
       "-log-level","debug"]
     depends_on:
@@ -32,7 +31,7 @@ services:
       context: .
       dockerfile: Biscotti.Online.Reservations.API/Dockerfile
     ports:
-      - "4002:80"
+      - "5002:80"
     depends_on:
       - dapr-placement
     networks:
@@ -44,7 +43,6 @@ services:
     command: ["./daprd",
       "-app-id","reservations-api",
       "-app-port","80",
-      #"-dapr-http-port","5002",
       "-placement-host-address","dapr-placement:50000",
       "-log-level","debug"]
     depends_on:
