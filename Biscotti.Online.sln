@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biscotti.Online.Orders.API", "Biscotti.Online.Orders.API\Biscotti.Online.Orders.API.csproj", "{8C0D933A-70D0-4601-A318-25DF983F996A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biscotti.Online.Reservations.API", "Biscotti.Online.Reservations.API\Biscotti.Online.Reservations.API.csproj", "{0A9798B6-155F-47F4-9B62-97B4C6487137}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4FE05EB3-6A21-42BA-8CD0-652FFB51A97D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{C1E09846-2417-47D6-A916-BBC85BA91909}"
+	ProjectSection(SolutionItems) = preProject
+		components\resiliency.yaml = components\resiliency.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C2736CEC-8993-4645-B866-985CBF88AAA7}"
+	ProjectSection(SolutionItems) = preProject
+		previewconfig.yaml = previewconfig.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C0D933A-70D0-4601-A318-25DF983F996A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C0D933A-70D0-4601-A318-25DF983F996A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C0D933A-70D0-4601-A318-25DF983F996A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C0D933A-70D0-4601-A318-25DF983F996A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9798B6-155F-47F4-9B62-97B4C6487137}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9798B6-155F-47F4-9B62-97B4C6487137}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9798B6-155F-47F4-9B62-97B4C6487137}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9798B6-155F-47F4-9B62-97B4C6487137}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FE05EB3-6A21-42BA-8CD0-652FFB51A97D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FE05EB3-6A21-42BA-8CD0-652FFB51A97D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FE05EB3-6A21-42BA-8CD0-652FFB51A97D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FE05EB3-6A21-42BA-8CD0-652FFB51A97D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04373D98-DEC6-4449-BDFD-A9A83981ABFA}
+	EndGlobalSection
+EndGlobal
