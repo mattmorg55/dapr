@@ -1,0 +1,65 @@
+version: '3.4'
+
+services:
+  orders-api:
+    image: ${DOCKER_REGISTRY-}biscottionlineordersapi
+    build:
+      context: .
+      dockerfile: Biscotti.Online.Orders.API/Dockerfile
+    ports:
+      - "4001:80"
+    depends_on:
+      - dapr-placement
+    networks:
+      - default
+      - backend
+
+  orders-api-dapr:
+    image: "daprio/daprd:1.9.4"
+    command: ["./daprd",
+      "-app-id","orders-api",
+      "-app-port","80",
+      #"-dapr-http-port","5001",
+      "-placement-host-address","dapr-placement:50000",
+      "-log-level","debug"]
+    depends_on:
+      - orders-api
+    network_mode: "service:orders-api"
+
+  reservations-api:
+    image: ${DOCKER_REGISTRY-}biscottionlinereservationsapi
+    build:
+      context: .
+      dockerfile: Biscotti.Online.Reservations.API/Dockerfile
+    ports:
+      - "4002:80"
+    depends_on:
+      - dapr-placement
+    networks:
+      - default
+      - backend
+
+  reservations-api-dapr:
+    image: "daprio/daprd:1.9.4"
+    command: ["./daprd",
+      "-app-id","reservations-api",
+      "-app-port","80",
+      #"-dapr-http-port","5002",
+      "-placement-host-address","dapr-placement:50000",
+      "-log-level","debug"]
+    depends_on:
+      - reservations-api
+    network_mode: "service:reservations-api"
+
+  dapr-placement:
+    image: "daprio/dapr:1.9.4"
+    command: ["./placement", "-port", "50000","-log-level","debug"]
+    ports:
+      - "50000:50000"
+    networks:
+      - default
+      - backend
+
+networks:
+  default:
+  backend:
