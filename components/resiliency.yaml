@@ -3,8 +3,8 @@ kind: Resiliency
 metadata:
   name: myresiliency
 scopes:
-  - biscotti-online-orders-api
-  - biscotti-online-reservations-api
+  - orders-api
+  - reservations-api
 spec:
   policies:
     timeouts:

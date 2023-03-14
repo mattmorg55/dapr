@@ -11,12 +11,17 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{C1E09846-2417-47D6-A916-BBC85BA91909}"
 	ProjectSection(SolutionItems) = preProject
+		components\orders-sql.yaml = components\orders-sql.yaml
+		components\redis.yaml = components\redis.yaml
+		components\reservations-sql.yaml = components\reservations-sql.yaml
 		components\resiliency.yaml = components\resiliency.yaml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C2736CEC-8993-4645-B866-985CBF88AAA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configuration", "configuration", "{2131BE47-DF53-4132-8FB3-992FF95DCF3C}"
 	ProjectSection(SolutionItems) = preProject
-		previewconfig.yaml = previewconfig.yaml
+		configuration\biscotti-online-config.yaml = configuration\biscotti-online-config.yaml
 	EndProjectSection
 EndProject
 Global

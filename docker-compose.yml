@@ -20,10 +20,15 @@ services:
       "-app-id","orders-api",
       "-app-port","80",
       "-placement-host-address","dapr-placement:50000",
+      "-resources-path", "./components",
+      "-config","./configuration/biscotti-online-config.yaml",
       "-log-level","debug"]
     depends_on:
       - orders-api
     network_mode: "service:orders-api"
+    volumes:
+      - "./components/:/components"
+      - "./configuration/:/configuration"
 
   reservations-api:
     image: ${DOCKER_REGISTRY-}biscottionlinereservationsapi
@@ -44,10 +49,15 @@ services:
       "-app-id","reservations-api",
       "-app-port","80",
       "-placement-host-address","dapr-placement:50000",
+      "-resources-path", "./components",
+      "-config","./configuration/biscotti-online-config.yaml",
       "-log-level","debug"]
     depends_on:
       - reservations-api
     network_mode: "service:reservations-api"
+    volumes:
+      - "./components/:/components"
+      - "./configuration/:/configuration"
 
   dapr-placement:
     image: "daprio/dapr:1.9.4"
@@ -57,6 +67,29 @@ services:
     networks:
       - default
       - backend
+
+  redis:
+    image: redis:latest
+    command: >
+      --requirepass y4dPrhPM55GhWSQw
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+  
+  sql:
+    image: mcr.microsoft.com/azure-sql-edge
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "y4dPrhPM55GhWSQw"
+    volumes:
+      - sql-data:/var/opt/mssql
+
+volumes:
+  redis-data:
+  sql-data:
 
 networks:
   default:
