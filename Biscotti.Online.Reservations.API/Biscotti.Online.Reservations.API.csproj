@@ -14,4 +14,8 @@
 	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Biscotti.Online.Reservations.Abstract\Biscotti.Online.Reservations.Abstract.csproj" />
+  </ItemGroup>
+
 </Project>

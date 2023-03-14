@@ -1,4 +1,4 @@
-using Biscotti.Online.Orders.API.Models;
+using Biscotti.Online.Orders.Abstract;
 using Dapr.Client;
 using Microsoft.AspNetCore.Mvc;
 using System;

@@ -1,5 +1,4 @@
-﻿namespace Biscotti.Online.Reservations.API.Models;
-
+﻿namespace Biscotti.Online.Reservations.Abstract;
 public class Item
 {
     public string? SKU { get; set; }

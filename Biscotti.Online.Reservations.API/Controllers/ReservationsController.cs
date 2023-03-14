@@ -1,4 +1,4 @@
-using Biscotti.Online.Reservations.API.Models;
+using Biscotti.Online.Reservations.Abstract;
 using Dapr.Client;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
