@@ -7,4 +7,6 @@ spec:
   version: v1
   metadata:
   - name: connectionString
-    value: "Server=sql;Initial Catalog=dapr;Persist Security Info=False;User ID=sa;Password=y4dPrhPM55GhWSQw;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;"
+    value: "Server=sql;User ID=sa;Password=y4dPrhPM55GhWSQw;database=reservationsstate;"
+  - name: tableName
+    value: state

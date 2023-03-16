@@ -15,7 +15,7 @@ services:
       - backend
 
   orders-api-dapr:
-    image: "daprio/daprd:1.9.4"
+    image: "daprio/daprd:1.10.3"
     command: ["./daprd",
       "-app-id","orders-api",
       "-app-port","80",
@@ -24,6 +24,7 @@ services:
       "-config","./configuration/biscotti-online-config.yaml",
       "-log-level","debug"]
     depends_on:
+      - sql
       - orders-api
     network_mode: "service:orders-api"
     volumes:
@@ -44,7 +45,7 @@ services:
       - backend
 
   reservations-api-dapr:
-    image: "daprio/daprd:1.9.4"
+    image: "daprio/daprd:1.10.3"
     command: ["./daprd",
       "-app-id","reservations-api",
       "-app-port","80",
@@ -53,6 +54,7 @@ services:
       "-config","./configuration/biscotti-online-config.yaml",
       "-log-level","debug"]
     depends_on:
+      - sql
       - reservations-api
     network_mode: "service:reservations-api"
     volumes:
@@ -60,7 +62,7 @@ services:
       - "./configuration/:/configuration"
 
   dapr-placement:
-    image: "daprio/dapr:1.9.4"
+    image: "daprio/dapr:1.10.3"
     command: ["./placement", "-port", "50000","-log-level","debug"]
     ports:
       - "50000:50000"
