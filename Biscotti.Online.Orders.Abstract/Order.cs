@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Biscotti.Online.Orders.API.Models;
-
+﻿namespace Biscotti.Online.Orders.Abstract;
 public class Order
 {
     public DateTime Date { get; set; }
@@ -11,11 +7,12 @@ public class Order
 
     public string? CustomerCode { get; set; }
 
-    public List<OrderItem> Items { get; set; }
+    public List<OrderItem>? Items { get; set; }
 }
 
 public class OrderItem
 {
-    public string ProductCode { get; set; }
+    public string? ProductCode { get; set; }
+
     public int Quantity { get; set; }
 }

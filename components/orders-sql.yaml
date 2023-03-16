@@ -1,0 +1,12 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: orders-sqlstore
+spec:
+  type: state.sqlserver
+  version: v1
+  metadata:
+  - name: connectionString
+    value: "Server=sql;User ID=sa;Password=y4dPrhPM55GhWSQw;database=ordersstate;"
+  - name: tableName
+    value: state

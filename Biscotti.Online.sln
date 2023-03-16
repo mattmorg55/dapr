@@ -11,13 +11,27 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{C1E09846-2417-47D6-A916-BBC85BA91909}"
 	ProjectSection(SolutionItems) = preProject
+		components\orders-sql.yaml = components\orders-sql.yaml
+		components\redis.yaml = components\redis.yaml
+		components\reservations-sql.yaml = components\reservations-sql.yaml
 		components\resiliency.yaml = components\resiliency.yaml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C2736CEC-8993-4645-B866-985CBF88AAA7}"
 	ProjectSection(SolutionItems) = preProject
-		previewconfig.yaml = previewconfig.yaml
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configuration", "configuration", "{2131BE47-DF53-4132-8FB3-992FF95DCF3C}"
+	ProjectSection(SolutionItems) = preProject
+		configuration\biscotti-online-config.yaml = configuration\biscotti-online-config.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biscotti.Online.Orders.Abstract", "Biscotti.Online.Orders.Abstract\Biscotti.Online.Orders.Abstract.csproj", "{1480A581-71DC-4308-BF98-7F13DF6D16EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biscotti.Online.Reservations.Abstract", "Biscotti.Online.Reservations.Abstract\Biscotti.Online.Reservations.Abstract.csproj", "{C4F4C110-BD94-4AD7-985A-5BE4DD7F2610}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +51,14 @@ Global
 		{4FE05EB3-6A21-42BA-8CD0-652FFB51A97D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FE05EB3-6A21-42BA-8CD0-652FFB51A97D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FE05EB3-6A21-42BA-8CD0-652FFB51A97D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1480A581-71DC-4308-BF98-7F13DF6D16EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1480A581-71DC-4308-BF98-7F13DF6D16EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1480A581-71DC-4308-BF98-7F13DF6D16EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1480A581-71DC-4308-BF98-7F13DF6D16EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4F4C110-BD94-4AD7-985A-5BE4DD7F2610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4F4C110-BD94-4AD7-985A-5BE4DD7F2610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4F4C110-BD94-4AD7-985A-5BE4DD7F2610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4F4C110-BD94-4AD7-985A-5BE4DD7F2610}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
